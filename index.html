@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f3ed">
+    <title>Tangled Chat</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Tangled Chat home">
+          <span class="brand-mark" aria-hidden="true">T</span>
+          <span>Tangled <span class="brand-light">Chat</span></span>
+        </a>
+        <button id="clear-button" class="quiet-button" type="button">New conversation</button>
+      </header>
+
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">A conversation, with a few extra turns</p>
+        <h1 id="page-title">Clarity, <span>artfully tangled.</span></h1>
+        <p class="intro-copy">
+          Ask anything. Get a clear answer, given a second coat of carefully
+          knotted, perfectly grammatical prose.
+        </p>
+      </section>
+
+      <section class="chat-card" aria-label="Chat">
+        <div id="messages" class="messages" role="log" aria-live="polite" aria-relevant="additions">
+          <div class="message bot-message">
+            <div class="avatar" aria-hidden="true">T</div>
+            <div class="message-content">
+              <span class="speaker">The assistant</span>
+              <p>Ask me something, and I shall answer plainly first—which is to say, before making a graceful detour.</p>
+            </div>
+          </div>
+        </div>
+        <p id="error-message" class="error-message" role="alert" hidden></p>
+        <form id="chat-form" class="composer">
+          <label class="sr-only" for="message-input">Your message</label>
+          <textarea id="message-input" name="message" rows="1" maxlength="4000"
+            placeholder="Ask a question..." required></textarea>
+          <div class="composer-footer">
+            <label class="style-control" for="style-level">
+              <span aria-hidden="true" class="style-icon">✳</span>
+              <span class="sr-only">Confusion level</span>
+              <select id="style-level" name="level">
+                <option value="mild">Mildly tangled</option>
+                <option value="medium" selected>Nicely tangled</option>
+                <option value="extreme">Extremely tangled</option>
+              </select>
+            </label>
+            <button id="send-button" class="send-button" type="submit">
+              <span>Send</span><span aria-hidden="true">↗</span>
+            </button>
+          </div>
+        </form>
+      </section>
+      <footer class="footnote">Two thoughtful steps. One delightfully circuitous answer.</footer>
+    </main>
+  </body>
+</html>
